@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,41 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Ẩn icon hiển thị mật khẩu mặc định của trình duyệt */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none; /* Loại bỏ trên Microsoft Edge */
+}
+
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-password-toggle {
+  display: none; /* Loại bỏ trên Chrome, Safari */
+}
+
+
+.custom-checkbox {
+  appearance: none;
+  background-color: #f9f9f9; /* Màu nền mặc định của checkbox */
+  border: 2px solid #d1d5db; /* Màu viền */
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: #1874fc; /* Màu xanh khi tick */
+  border-color: #1874fc; /* Màu viền khi tick */
+}
+
+.custom-checkbox:checked::before {
+  content: '✓';
+  display: block;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1; /* Điều chỉnh để dấu tick không bị lệch */
 }
